@@ -1,10 +1,4 @@
-//
-//  TodayViewController.swift
-//  RestaurantWidget
-//
-//  Created by AppsFoundation on 23/09/15.
-//  Copyright © 2015 AppsFoundation. All rights reserved.
-//
+
 
 import UIKit
 import NotificationCenter
