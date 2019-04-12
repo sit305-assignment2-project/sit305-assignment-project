@@ -1,11 +1,12 @@
 # Week 4, 25/March
-- Doing research and looking for resources for the project. [WHO?]
+- Team meeting(Basic function design, workflow and Time schedule) [Team]
+- Doing research and looking for resources for the project.[Team]
 
 # Week 5, 1/April
-- Start developing (WHAT exactly?) [WHO?]
+- Start developing (WHAT exactly?) [Chak]
 
 # Week 5, 2/April
-- UI Design (WHICH FILES exactly?) [WHO?]
+- UI Design (StoreWidget) [Shiqi]
 
 # Week 6, Tuesday 9/April [Henry]
 - I need to see much more updates. Minimum 2 days work, per student, per week. Usually 200 - 1000 lines of code added per week.
