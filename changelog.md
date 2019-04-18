@@ -21,7 +21,7 @@
 # Week 5, 4/April
 - Upload classes with bugs  [Chak Nam]
 
-# Week 6, Tuesday 8/April
+# Week 6, Monday 8/April
 - Client update  [Chak Nam]
 - Update README.md  [Chak Nam]
 - Add files via upload  [Shiqi]
@@ -38,5 +38,5 @@
 - Feedback: Remember you're only marked on your own program code. Almost nothing else.
 - Feedback: This project is falling quite behind. I can't find 10-14 hours work for last week. Show me 10-14 hours each per week.. where was it spent? 
 - Feedback: I want you to start writing the time taken per changelog item (in brackets at the end of each line), so that you can see where time is being spent / not being spent enough. [Henry]
-- Feedback: You have two Tuesdays, both 8/April and 9/April in your changelog.. how is this possible? [Henry]
+
 
