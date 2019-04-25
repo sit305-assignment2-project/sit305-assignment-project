@@ -1,10 +1,4 @@
-//
-//  FeedbackViewController.swift
-//  Restaurant
-//
-//  Created by AppsFoundation on 8/28/15.
-//  Copyright © 2015 AppsFoundation. All rights reserved.
-//
+
 
 import UIKit
 
