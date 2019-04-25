@@ -55,5 +55,7 @@
 - Learn how to connect the mainstoryboard frames and buttons with Controller classes. [Shiqi 5 hours]
 - Learn how to connect the mainstoryboard frames and buttons with Controller Classes. [Chak Nam 5 hours]
 
-
+# Week 7 Saturday 20/April
+- Update BaseViewController [Chak Nam 4 hours] 
+- Update LeftMenuViewController [Shiqi 3 hours]
 
