@@ -59,3 +59,11 @@
 - Update BaseViewController [Chak Nam 4 hours] 
 - Update LeftMenuViewController [Shiqi 3 hours]
 
+# Week 8 Monday -Saturday 22-27 /April
+- Woking on Enquire module and Feedback module (average 2 hours per day) [shiqi 12 hours]
+
+# Week 8 Sunday 28/April
+- Submit Enquire module(Enquire.swift) [Shiqi 0.5 hours]
+- Submit Feedback module(Feedback.swift) [Shiqi 0.5 hours]
+
+
