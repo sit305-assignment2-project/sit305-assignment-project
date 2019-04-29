@@ -61,10 +61,13 @@
 
 # Week 8 Monday -Saturday 22-27 /April
 - Woking on Enquire module and Feedback module (average 2 hours per day) [shiqi 12 hours]
-- Working on Login module [Chak Nam 10 hours] plan to upload login module on Monday 29/April 
+- Working on Login module [Chak Nam 10 hours] 
+- plan to upload login module on Monday 29/April 
 
 # Week 8 Sunday 28/April
 - Submit Enquire module(Enquire.swift) [Shiqi 0.5 hours]
 - Submit Feedback module(Feedback.swift) [Shiqi 0.5 hours]
 
+# Week 9 Monday 29/April
+- Submit Login module(LoginViewController) [Cha Nam 2 hours]
 
