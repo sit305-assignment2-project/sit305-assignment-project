@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Men&apos;s suits</string>
+		<key>productCode</key>
+		<string>(Leisure type)</string>
+		<key>image</key>
+		<string>photo_item3</string>
+		<key>price</key>
+		<string>$125</string>
+		<key>discount</key>
+		<string>20 percent off special offer</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Leisure outgoing</string>
+		<key>productCode</key>
+		<string>(Leisure type)</string>
+		<key>image</key>
+		<string>photo_item2</string>
+		<key>price</key>
+		<string>$300</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Korean leisure</string>
+		<key>productCode</key>
+		<string>(Korean clothes)</string>
+		<key>image</key>
+		<string>photo_item1</string>
+		<key>price</key>
+		<string>$150</string>
+		<key>discount</key>
+		<string>10 percent off discount</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Korean clothing</string>
+		<key>productCode</key>
+		<string>(Korean clothes)</string>
+		<key>image</key>
+		<string>photo_item4</string>
+		<key>price</key>
+		<string>$145</string>
+	</dict>
+</array>
+</plist>
