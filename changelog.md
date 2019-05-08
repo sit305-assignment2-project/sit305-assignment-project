@@ -71,3 +71,10 @@
 # Week 9 Monday 29/April
 - Submit Login module(LoginViewController) [Cha Nam 2 hours]
 
+# Week 9, Wednesday 8/May [Henry]
+- You have a date wrong for Monday. It was 6/May 2 days ago, not 29/April.
+- Good progress. Glad to see it's getting closer. Final stretch now. 
+- Make sure you go over everything in the Grading Criteria super carefully, to ensure you meet each point.
+
+
+
