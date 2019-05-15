@@ -64,11 +64,11 @@ class FeedbackViewController: BaseViewController {
         let color = UIColor(red: 130.0/255.0, green: 123.0/255.0, blue: 120.0/255.0, alpha: 1.0)
         
         if let nameField = self.nameField, let namePlaceholder = nameField.placeholder {
-            nameField.attributedPlaceholder = NSAttributedString(string: namePlaceholder, attributes: [NSForegroundColorAttributeName: color])
+            nameField.attributedPlaceholder = NSAttributedString(string: namePlaceholder, attributes: [NSAttributedString.Key.foregroundColor: color])
         }
         
         if let feedbackField = self.feedbackField, let feedbackPlaceholder = feedbackField.placeholder {
-            feedbackField.attributedPlaceholder = NSAttributedString(string: feedbackPlaceholder, attributes: [NSForegroundColorAttributeName: color])
+            feedbackField.attributedPlaceholder = NSAttributedString(string: feedbackPlaceholder, attributes: [NSAttributedString.Key.foregroundColor: color])
         }
     }
     
@@ -82,13 +82,13 @@ class FeedbackViewController: BaseViewController {
         let arrayOfButtons: [UIButton?] = [oneStarBtn, twoStarsBtn, threeStarsBtn, fourStarsBtn, fiveStarsBtn]
         
         for i in 0 ... newRating {
-            if let btn = arrayOfButtons[i]! as UIButton! {
+            if let btn = arrayOfButtons[i]! as UIButton? {
                 btn.setImage(starImage, for: .normal)
             }
         }
         
         for i in 0 ... newRating {
-            if let btn = arrayOfButtons[i]! as UIButton! {
+            if let btn = arrayOfButtons[i]! as UIButton? {
                 btn.setImage(greyStarImage, for: .normal)
             }
         }
@@ -169,7 +169,7 @@ extension FeedbackViewController: UITableViewDelegate {
         cell.feedbackNameLabel?.text = feedback.name
         cell.feedbackTextLabel?.text = feedback.text
         
-        let height = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        let height = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         return height
     }
 }

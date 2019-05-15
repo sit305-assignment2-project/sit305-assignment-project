@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>pwd</key>
+		<string>summer654</string>
+		<key>name</key>
+		<string>1314567890</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>1514567890</string>
+		<key>pwd</key>
+		<string>summer123</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>1414567890</string>
+		<key>pwd</key>
+		<string>summer789</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>1234567890</string>
+		<key>pwd</key>
+		<string>summer</string>
+	</dict>
+</array>
+</plist>

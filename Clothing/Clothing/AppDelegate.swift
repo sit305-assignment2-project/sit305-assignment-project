@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         
-        window = UIWindow.init(frame: UIScreen.main.bounds);
+        window = UIWindow()
+        window?.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         window?.backgroundColor = UIColor.white;
         
         window?.makeKeyAndVisible();
@@ -32,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = loginVC;
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MSSlidingPanelController")
-        mainVC = controller as! MSSlidingPanelController;
+        mainVC = controller as? MSSlidingPanelController;
         //mainVC  = UIStoryboard(name: "Main", bundle: nil)
         //    .instantiateInitialViewController() as! MSSlidingPanelController;
         
@@ -61,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
-    func showAppRate() {
+    @objc func showAppRate() {
         let didShowAppRate = UserDefaults.standard.value(forKey: "showedAppRate") as? Bool
         if didShowAppRate != true {
             rateApp()
@@ -115,10 +116,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func rateApp() {
-        let alertController = UIAlertController(title: "Rate the App", message: "Do you like this app?", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Rate the App", message: "Do you like this app?", preferredStyle: UIAlertController.Style.alert)
         
         //Create action for "No"
-        let noAction: UIAlertAction = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel) { action -> Void in }
+        let noAction: UIAlertAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) { action -> Void in }
         alertController.addAction(noAction)
         
         //Create action for "Yes"

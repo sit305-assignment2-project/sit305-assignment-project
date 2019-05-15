@@ -3,6 +3,12 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>images</key>
+		<array>
+			<string>photo_item2</string>
+			<string>photo_item3</string>
+			<string>photo_item4</string>
+		</array>
 		<key>name</key>
 		<string>Men&apos;s suits</string>
 		<key>productCode</key>
@@ -15,6 +21,12 @@
 		<string>20 percent off special offer</string>
 	</dict>
 	<dict>
+		<key>images</key>
+		<array>
+			<string>photo_item2</string>
+			<string>photo_item3</string>
+			<string>photo_item4</string>
+		</array>
 		<key>name</key>
 		<string>Leisure outgoing</string>
 		<key>productCode</key>
@@ -25,6 +37,12 @@
 		<string>$300</string>
 	</dict>
 	<dict>
+		<key>images</key>
+		<array>
+			<string>photo_item2</string>
+			<string>photo_item3</string>
+			<string>photo_item4</string>
+		</array>
 		<key>name</key>
 		<string>Korean leisure</string>
 		<key>productCode</key>
@@ -37,6 +55,12 @@
 		<string>10 percent off discount</string>
 	</dict>
 	<dict>
+		<key>images</key>
+		<array>
+			<string>photo_item2</string>
+			<string>photo_item3</string>
+			<string>photo_item4</string>
+		</array>
 		<key>name</key>
 		<string>Korean clothing</string>
 		<key>productCode</key>

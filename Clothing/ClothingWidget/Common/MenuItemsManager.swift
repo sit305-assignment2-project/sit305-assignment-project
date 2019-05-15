@@ -30,8 +30,9 @@ class MenuItemsManager: NSObject {
             let image = obj["image"] as! String
             let price = obj["price"] as! String
             let discount = obj["discount"] as? String
+            let images = obj["images"] as! Array<String>
             
-            let loadedMenuItem = MenuItem(name: name, productCode: productCode, image: image, price: price, discount: discount)
+            let loadedMenuItem = MenuItem(name: name, productCode: productCode, image: image, price: price, discount: discount,images:images)
             resultItems.append(loadedMenuItem)
         }
         return resultItems

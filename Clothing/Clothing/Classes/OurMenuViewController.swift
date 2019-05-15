@@ -38,7 +38,6 @@ extension OurMenuViewController: UITableViewDataSource {
         } else {
             cell.discountView?.isHidden = true
         }
-        
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -47,5 +46,17 @@ extension OurMenuViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count
+    }
+    
+    
+    
+}
+// MARK: - UITableViewDelegate
+extension OurMenuViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailViewController()
+        let item = menuItems[indexPath.row]
+        detailVC.model = item
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

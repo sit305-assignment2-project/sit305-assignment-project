@@ -61,10 +61,10 @@ class LoginViewController: UIViewController {
         self.view.addSubview(line2);
         
         let denglu:UIButton = UIButton.init(frame: CGRect(x: 20, y: 340, width: UIScreen.main.bounds.width-40, height: 50));
-        denglu.addTarget(self, action: #selector(clickDengLu), for: UIControlEvents.touchUpInside);
-        denglu.setTitle("login", for: UIControlState.normal);
+        denglu.addTarget(self, action: #selector(clickDengLu), for: UIControl.Event.touchUpInside);
+        denglu.setTitle("login", for: UIControl.State.normal);
         denglu.titleLabel?.font = UIFont.systemFont(ofSize: 18);
-        denglu.setTitleColor(UIColor.white, for: UIControlState.normal);
+        denglu.setTitleColor(UIColor.white, for: UIControl.State.normal);
         denglu.backgroundColor = UIColor.init(red: 116.0/255, green: 169.0/255, blue: 232/255.0, alpha: 1);
         denglu.clipsToBounds = true;
         denglu.layer.cornerRadius = 10;
@@ -76,26 +76,28 @@ class LoginViewController: UIViewController {
         
     }
     
-    func clickDengLu(){
+    @objc func clickDengLu(){
         
-        if (inputName.text!.characters.count == 0) {
-           MBProgressHUD .showError("please input userName", to: nil);
-            return;
-        
+        guard let name = self.inputName.text,!name.isEmpty else {
+            MBProgressHUD .showError("please input userName", to: nil)
+            return
         }
-        if (inputPassword.text!.characters.count == 0) {
-            MBProgressHUD .showError("please input passWord", to: nil);
-            return;
+        guard let pwd = self.inputPassword.text,!pwd.isEmpty else {
+            MBProgressHUD .showError("please input passWord", to: nil)
+            return
         }
-       
-        let appdelegate :AppDelegate = UIApplication.shared.delegate as! AppDelegate;
-        appdelegate.changeVC();
-        
-        
-        self.endAll();
+        if isTelephoneNumber(name) == false {
+            MBProgressHUD .showError("The account number is a ten significant digit", to: nil)
+            return
+        }
+        if isPwd(pwd) == false {
+            MBProgressHUD .showError("Passwords are made up of 6 - to 18-bit Numbers or letters", to: nil)
+            return
+        }
+        self.configCheckPwd(name: name, pwd: pwd)
     }
     
-    func endAll() -> Void {
+    @objc func endAll() -> Void {
         
         self.view.endEditing(true);
     }
@@ -104,20 +106,88 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning();
     }
     
+    fileprivate func configCheckPwd(name:String,pwd:String) {
+        let dataAry = loadData()
+        var hasName = false
+        var pwdIsTrue = false
+        for model in dataAry {
+            if name == model.name {
+                hasName = true
+                if pwd == model.pwd {
+                    //密码正确
+                    pwdIsTrue = true
+                }
+            }
+        }
+        guard hasName else {
+            MBProgressHUD .showError("Account does not exist", to: nil);
+            return
+        }
+        guard pwdIsTrue else {
+            MBProgressHUD .showError("Incorrect password", to: nil);
+            return
+        }
+        
+        let appdelegate :AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.changeVC()
+        self.endAll()
+        
+        
+    }
     
+    func loadData() -> [UserAccountModel] {
+        let path = Bundle.main.path(forResource: "UserAccount", ofType: "plist")
+        let accountAry = NSArray(contentsOfFile: path!)
+        if let dataArray = accountAry,dataArray.count > 0 {
+            return constructMenuItemsFromArray(array: dataArray)
+        } else {
+            return [UserAccountModel]()
+        }
+    }
     
+    // MARK: - Private Methods
+    private func constructMenuItemsFromArray(array: NSArray) -> [UserAccountModel] {
+        var resultItems = [UserAccountModel]()
+        
+        for object in array {
+            let obj = object as! NSDictionary
+            let name = obj["name"] as! String
+            let pwd = obj["pwd"] as! String
+            let loadedMenuItem = UserAccountModel(name: name, pwd: pwd)
+            resultItems.append(loadedMenuItem)
+        }
+        return resultItems
+    }
     
+    /// 判断账号的正则表达式
+    ///
+    /// - Returns: 是账号返回 true or false
+    func isTelephoneNumber(_ phone:String) -> Bool {
+        
+        let mobile = "^[0-9]{10}"
+        let regextesMobile = NSPredicate(format:"SELF MATCHES %@", mobile)
+        
+        if regextesMobile.evaluate(with: phone) == true {
+            return true
+        } else {
+            return false
+        }
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    /// 判断密码
+    ///
+    /// - Parameter pwd: 密码
+    /// - Returns: 是否合法
+    func isPwd(_ pwd:String) -> Bool {
+//        let mobile = "^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,18}"
+        let mobile = "^[a-zA-Z0-9]{6,18}"
+        
+        let regextesMobile = NSPredicate(format:"SELF MATCHES %@", mobile)
+        if regextesMobile.evaluate(with: pwd) == true {
+            return true
+        } else {
+            return false
+        }
+    }
     
 }

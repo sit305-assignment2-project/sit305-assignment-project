@@ -18,8 +18,11 @@ class KeyboardListener: NSObject {
         super.init()
         
         //keyboard notifications to change tableview frame
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     deinit {
@@ -27,8 +30,8 @@ class KeyboardListener: NSObject {
     }
     
     // MARK: - Keyboard notifications
-    func keyboardWillShow(notification: NSNotification) {
-        if let info = notification.userInfo, let kbFrame: NSValue = info[UIKeyboardFrameEndUserInfoKey] as? NSValue, let animationDuration: TimeInterval = info[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval {
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let info = notification.userInfo, let kbFrame: NSValue = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue, let animationDuration: TimeInterval = info[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval {
             
             let keyboardFrame = kbFrame.cgRectValue
             constraint.constant = keyboardFrame.size.height
@@ -41,10 +44,10 @@ class KeyboardListener: NSObject {
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
         if let info = notification.userInfo,
             
-            let animationDuration: TimeInterval = info[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval {
+            let animationDuration: TimeInterval = info[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval {
             constraint.constant = constraintConstant
             
             UIView.animate(withDuration: animationDuration, animations: { () -> Void in
