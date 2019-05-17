@@ -77,6 +77,6 @@
 - Make sure you go over everything in the Grading Criteria super carefully, to ensure you meet each point.
 
 # Week 10 Wednesday 15/May
--Final update and debug [Cha Nam 3 hours]
--Upload some function of shopping cart [Shiqi 3 hours]
+- Final update and debug [Cha Nam 3 hours]
+- Upload some function of shopping cart [Shiqi 3 hours]
 
